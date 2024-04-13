@@ -10,7 +10,7 @@ class OrderDetailController extends Controller
     public function index()
     {
         $orderDetails = OrderDetail::all();
-        if($orderDetails->isNotEmpty()){
+        if ($orderDetails->isNotEmpty()) {
             $data = [
                 'message' => 'Get All Order Details',
                 'data' => $orderDetails
@@ -46,7 +46,7 @@ class OrderDetailController extends Controller
     public function show($id)
     {
         $orderDetail = OrderDetail::find($id);
-        if($orderDetail){
+        if ($orderDetail) {
             $data = [
                 'message' => 'Get Detail Data',
                 'data' => $orderDetail,
@@ -65,7 +65,7 @@ class OrderDetailController extends Controller
     {
         $orderDetail = OrderDetail::find($id);
 
-        if($orderDetail){
+        if ($orderDetail) {
             $validatedData = $request->validate([
                 'order_id' => 'exists:orders,id',
                 'product_id' => 'exists:products,id',
